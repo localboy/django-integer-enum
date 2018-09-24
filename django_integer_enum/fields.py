@@ -18,7 +18,7 @@ class EnumIntegerField(models.fields.IntegerField):
             kwargs['choices'] = self.enum_choices.choices()
             kwargs['db_index'] = kwargs.pop('db_index', True)
             kwargs['default'] = kwargs.pop('default', self.enum_choices.DEFAULT)
-        super(SelectIntegerField, self).__init__(*args, **kwargs)
+        super(EnumIntegerField, self).__init__(*args, **kwargs)
 
     def validate_input(self, value):
         if not self.enum_choices.is_in_values(value):
@@ -26,7 +26,7 @@ class EnumIntegerField(models.fields.IntegerField):
 
     @staticmethod
     def validate_fields(meta_fields, dict_fields):
-        fields = [field for field in meta_fields if isinstance(field, SelectIntegerField)]
+        fields = [field for field in meta_fields if isinstance(field, EnumIntegerField)]
         for field in fields:
             value = dict_fields.get(field.name)
             field.validate_input(value)
