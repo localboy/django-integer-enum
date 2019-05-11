@@ -6,8 +6,6 @@
 
 import unittest
 
-from django_integer_enum import django_integer_enum
-
 
 class TestDjango_integer_enum(unittest.TestCase):
     """Tests for `django_integer_enum` package."""
