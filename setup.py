@@ -42,7 +42,7 @@ setup(
     name='django_integer_enum',
     packages=find_packages(include=['django_integer_enum']),
     setup_requires=setup_requirements,
-    test_suite='tests',
+    test_suite='tests.testproject.runtest.runtests',
     tests_require=test_requirements,
     url='https://github.com/localboy/django-integer-enum',
     version='0.1.0',
