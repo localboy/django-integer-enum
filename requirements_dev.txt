@@ -1,4 +1,4 @@
-Django==2.2.3
+Django==2.2.4
 pip==9.0.1
 bumpversion==0.5.3
 wheel==0.30.0
